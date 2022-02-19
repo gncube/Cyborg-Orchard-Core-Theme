@@ -1,0 +1,60 @@
+/* ==========================================================================
+   #ANIMATIONS/GROW IN
+   ========================================================================== */
+
+/**
+ * 1. Any animation that deals with element visibility also needs a no-js 
+ *    fallback of running a keyframe animation once to ensure it becomes 
+ *    visible.
+ * 2. Significant delay to allow it to appear smooth for people with JS turned
+ *    on, but fade if no-js remains on the DOM, implying a JS failure or lack 
+ *    of JS enabled.
+ */
+
+.animate {
+    .grow-in {
+        transform: scale(0);
+        transform-origin: center;
+        transition: transform var(--animationDuration) var(--animationTiming);
+        transition-delay: var(--animationDelay);
+
+        &.in-viewport {
+            transform: scale(1);
+        }
+
+        /* 1 */
+        .no-js & {
+            transition: none;
+            animation-name: noJSGrowIn;
+            animation-duration: var(--animationDuration);
+            animation-fill-mode: forwards;
+            animation-delay: var(--animationFallbackDuration); /* 2 */
+        }
+    }
+
+    .grow-in--from-bottom {
+        transform-origin: bottom;
+    }
+
+    .grow-in--from-left {
+        transform-origin: left;
+    }
+
+    .grow-in--from-right {
+        transform-origin: right;
+    }
+
+    .grow-in--from-top {
+        transform-origin: top;
+    }
+}
+
+@keyframes noJSGrowIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #TILES/VARIABLES
+   ========================================================================== */
+
+@use 'sass:math';
+
+:root {
+    --tilesBackgroundColor: transparent;
+    --tilesBackgroundPattern: none;
+    --tilesDimension: 24rem;
+    --tilesGap: #{math.div($spacing-default, 2)};
+    --tilesPadding: #{$spacing-default};
+}

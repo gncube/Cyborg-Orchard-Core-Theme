@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #INPUT
+   ========================================================================== */
+
+input {
+    border: $form-border-size solid var(--colorTextLight);
+    display: block;
+    padding: $form-element-padding-vertical $form-element-padding-horizontal;
+    width: 100%;
+
+    background-color: transparent;
+    outline: none;
+
+    text-indent: 0;
+
+    &:focus {
+        @include focus-form-element;
+    }
+
+    &[type='file'] {
+        border: 0;
+    }
+}

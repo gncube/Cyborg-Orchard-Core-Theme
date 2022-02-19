@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #LINK/CTA
+   ========================================================================== */
+
+.link--cta {
+    &-large {
+        padding-bottom: $spacing-small;
+        padding-left: $spacing-default;
+        padding-right: $spacing-default;
+        padding-top: $spacing-small;
+
+        font-size: var(--fontSizeH3);
+    }
+}

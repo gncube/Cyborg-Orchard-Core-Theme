@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #PARAGRAPH
+   ========================================================================== */
+
+/**
+ * Default behaviour for a paragraph.
+ */
+
+p {
+    margin-bottom: $spacing-text-default;
+    margin-top: 0;
+
+    @include mq($from: mobileLarge) {
+        margin-bottom: $spacing-text-desktop;
+    }
+}

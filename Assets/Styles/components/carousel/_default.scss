@@ -1,0 +1,179 @@
+/*  ==========================================================================
+    #CAROUSEL/DEFAULT
+    ========================================================================== */
+
+@use 'sass:math';
+
+.carousel {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/**
+ * 1. Position indicators above the line effect containers.
+ */
+.carousel__indicators {
+    bottom: $spacing-large;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100; /* 1. */
+
+    list-style: none;
+}
+
+.carousel__indicator {
+    height: $carousel-indicator-size;
+    margin-right: $spacing-default;
+    width: $carousel-indicator-size;
+
+    .btn {
+        border: 0;
+        height: 100%;
+        padding: 0;
+        width: 100%;
+
+        background-color: var(--colorCarouselIndicator);
+        border-radius: math.div($carousel-indicator-size, 2);
+
+        &:focus,
+        &:hover {
+            background-color: var(--colorCarouselIndicatorFocus);
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.is-active .btn {
+        background-color: var(--colorCarouselIndicatorActive);
+    }
+}
+
+.carousel__next-btn {
+    right: $carousel-nav-btn-x-mobile;
+    transform: translateX(0) translateY(-50%) rotate(180deg);
+
+    @include mq($from: carouselNextPreviousReposition) {
+        right: $carousel-nav-btn-x;
+    }
+}
+
+.carousel__previous-btn {
+    left: $carousel-nav-btn-x-mobile;
+    transform: translateX(0) translateY(-50%);
+
+    @include mq($from: carouselNextPreviousReposition) {
+        left: $carousel-nav-btn-x;
+    }
+}
+
+/**
+ * 1. Position indicators above the line effect containers.
+ * 2. Animation is added to the SVG so the button hit area does not also move.
+ * 3. Negative margin used on the psuedo element to increase hit area.
+ */
+.carousel__next-btn,
+.carousel__previous-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 100; /* 1. */
+
+    /* 2. */
+    &:focus,
+    &:hover {
+        svg {
+            animation-duration: $carousel-button-animation-duration;
+            animation-iteration-count: infinite;
+            animation-name: carouselButtonHover;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: backwards;
+        }
+    }
+
+    /* 3. */
+    &:after {
+        bottom: $carousel-button-hit-area;
+        content: '';
+        left: $carousel-button-hit-area;
+        position: absolute;
+        right: $carousel-button-hit-area;
+        top: $carousel-button-hit-area;
+    }
+}
+
+.carousel__items {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+}
+
+.carousel__item {
+    border-radius: 0;
+    display: none;
+    min-width: 100%;
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--colorWhite);
+
+    @include mq($from: tablet) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    &.is-active {
+        display: block;
+    }
+
+    &:hover {
+        .carousel__item-background img {
+            transform: $carousel-item-background-scale-hover;
+        }
+    }
+}
+
+.carousel__item-background {
+    grid-column: span 6;
+    height: auto;
+    margin-left: -$content-gutter-small;
+    margin-right: -$content-gutter-small;
+    width: auto;
+
+    @include mq($from: tablet) {
+        margin-left: -$content-gutter;
+        margin-right: -$content-gutter;
+    }
+
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+        transform: $carousel-item-background-scale;
+        transition: $carousel-item-background-transition;
+    }
+}
+
+@keyframes carouselButtonHover {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX($carousel-button-hover-translate-x);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

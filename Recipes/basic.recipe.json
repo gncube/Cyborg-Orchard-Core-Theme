@@ -1,0 +1,41 @@
+{
+    "name": "Basic Site",
+    "displayName": "Basic Site",
+    "description": "Sets up basic site with boilerplate theme",
+    "author": "Ncube Digital",
+    "website": "https://ncube.digital",
+    "version": "1.3.3",
+    "issetuprecipe": true,
+    "categories": ["basic"],
+    "tags": ["basic"],
+    "variables": {
+        "now": "[js: new Date().toISOString()]"
+    },
+    "steps": [
+        {
+            "name": "recipes",
+            "Values": [
+                {
+                    "executionid": "CyborgTheme",
+                    "name": "Basic-FeaturesAndSettings"
+                },
+                {
+                    "executionid": "CyborgTheme",
+                    "name": "Basic-ContentDefinitions"
+                },
+                {
+                    "executionid": "Etch.OrchardCore.Widgets",
+                    "name": "Widgets-ContentDefinitions"
+                },
+                {
+                    "executionid": "CyborgTheme",
+                    "name": "Basic-ContentAndMedia"
+                },
+                {
+                    "executionid": "CyborgTheme",
+                    "name": "Basic-QueriesAndIndexes"
+                }
+            ]
+        }
+    ]
+}

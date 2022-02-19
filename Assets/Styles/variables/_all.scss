@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #VARIABLES
+   ========================================================================== */
+
+/**
+ * Place any values in variables file to avoid magic values.
+ * https://stackoverflow.com/questions/47882/what-is-a-magic-number-and-why-is-it-bad
+ */
+
+@import 'colour';
+@import 'content';
+@import 'form';
+@import 'scrollbar';
+@import 'spacing';
+@import 'table';
+@import 'typography';
+@import 'widths';
+@import 'z-index';
+
+// breakpoints should be last as may rely on variables from other partials
+@import 'breakpoints';

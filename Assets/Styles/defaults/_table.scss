@@ -1,0 +1,73 @@
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+
+/**
+ * 1. The border-collapse property sets whether cells inside a <table> have
+ *    shared or separate borders. 
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse
+ */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse; /* 1. */
+
+    thead {
+        display: none;
+
+        @include mq($from: tablet) {
+            display: table-header-group;
+        }
+    }
+
+    tr {
+        border-bottom: $table-border-width solid var(--colorGrey);
+        display: block;
+        margin-bottom: $spacing-default;
+        padding-bottom: $spacing-default;
+
+        @include mq($from: tablet) {
+            display: table-row;
+            margin-bottom: 0;
+        }
+    }
+
+    td {
+        &:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            margin-right: $table-cell-padding-horizontal;
+
+            @include mq($from: tablet) {
+                display: none;
+            }
+        }
+    }
+
+    th,
+    td {
+        display: block;
+        padding-bottom: $table-cell-padding-vertical-mobile;
+        padding-left: $table-cell-padding-horizontal;
+        padding-right: $table-cell-padding-horizontal;
+        padding-top: $table-cell-padding-vertical-mobile;
+
+        text-align: right;
+
+        @include mq($from: tablet) {
+            display: table-cell;
+            padding-bottom: $table-cell-padding-vertical;
+            padding-right: 0;
+            padding-top: $table-cell-padding-vertical;
+            vertical-align: top;
+
+            text-align: left;
+        }
+
+        &:last-child {
+            padding-right: $table-cell-padding-horizontal;
+        }
+    }
+}

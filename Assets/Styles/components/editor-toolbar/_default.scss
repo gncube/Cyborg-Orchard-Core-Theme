@@ -1,0 +1,31 @@
+/* ==========================================================================
+   #EDITOR-TOOLBAR/DEFAULT
+   ========================================================================== */
+
+.editor-toolbar {
+    bottom: 0;
+    left: 0;
+    padding: $spacing-default;
+    position: fixed;
+    width: 100%;
+    z-index: $editor-toolbar-z-index;
+
+    background-color: var(--colorBlack);
+
+    color: var(--colorWhite);
+
+    @include mq($from: tablet) {
+        bottom: $content-gutter-small;
+        left: $content-gutter-small;
+        max-width: $editor-toolbar-max-width;
+        width: auto;
+
+        border-radius: $editor-toolbar-border-radius;
+    }
+}
+
+.editor-toolbar__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $content-width;
+}

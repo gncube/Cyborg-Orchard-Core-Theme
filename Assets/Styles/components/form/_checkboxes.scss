@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #FORM/CHECKBOXES
+   ========================================================================== */
+
+.checkboxes {
+    display: block;
+
+    &__item {
+        display: block;
+        margin-bottom: $spacing-default;
+        position: relative;
+
+        .checkboxes--inline & {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: $spacing-default;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        margin-bottom: 0;
+        padding-left: $form-checkbox-label-padding-left;
+
+        font-family: var(--fontFamilyDefault);
+        font-size: var(--fontSizeDefault);
+        font-weight: var(--fontWeightDefault);
+
+        cursor: pointer;
+        touch-action: manipulation;
+
+        &:before {
+            border: $form-border-size solid var(--colorTextLight);
+            box-sizing: border-box;
+            height: $form-checkbox-height;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: $form-checkbox-width;
+
+            background: transparent;
+
+            content: '';
+        }
+
+        &:after {
+            height: $form-checkbox-label-after-height;
+            left: $form-checkbox-label-after-x-pos;
+            position: absolute;
+            top: $form-checkbox-label-after-y-pos;
+            width: $form-checkbox-label-after-width;
+
+            background: transparent;
+            border: solid;
+            border-width: $form-checkbox-label-after-border-width;
+            border-top-color: transparent;
+            transform: rotate(-45deg);
+            opacity: 0;
+
+            content: '';
+        }
+    }
+
+    &__input {
+        height: $form-checkbox-height;
+        left: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        width: $form-checkbox-width;
+        z-index: $z-index-default;
+
+        cursor: pointer;
+        opacity: 0;
+
+        /* Make check icon visible */
+        &:checked + .checkboxes__label:after {
+            opacity: 1;
+        }
+
+        /* Change checkbox border colour when checked */
+        &:checked + .checkboxes__label:before {
+            border-color: var(--colorTextDefault);
+        }
+
+        /* Show focus colour */
+        &:focus + .checkboxes__label::before {
+            @include focus-form-element;
+        }
+    }
+}

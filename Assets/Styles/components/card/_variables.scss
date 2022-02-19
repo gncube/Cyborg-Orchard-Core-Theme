@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #CARD/VARIABLES
+   ========================================================================== */
+
+$card-overlay-media-height: 24rem;
+$card-overlay-media-height-mobile: 22rem;
+$card-overlay-media-height-tablet: 34rem;
+
+:root {
+    --cardBackground: #eaeaea;
+    --cardBackgroundPattern: none;
+    --cardBodyZIndex: 3; /* 1 */
+    --cardBorder: var(--colorGrey);
+    --cardBorderRadius: 0;
+    --cardBodyPadding: 2.4rem;
+    --cardMediaBorder: none;
+    --cardMediaMarginBottom: 0;
+    --cardMetaWeight: 700;
+    --cardMetaTextTransform: uppercase;
+    --cardTextColor: inherit;
+    --cardTitleMarginBottom: 0.2rem;
+    --cardMediaImageScale: 1;
+    --cardMediaImageScaleHover: 1.2;
+    --cardMediaImageTransitionDuration: 1s;
+}

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #TEXTAREA
+   ========================================================================== */
+
+textarea {
+    border: $form-border-size solid var(--colorTextLight);
+    display: block;
+    min-height: $textarea-min-height;
+    padding: $form-element-padding-vertical $form-element-padding-horizontal;
+    width: 100%;
+
+    .has-error & {
+        border: $form-border-size solid var(--colorError);
+    }
+
+    &:focus {
+        @include focus-form-element;
+    }
+}

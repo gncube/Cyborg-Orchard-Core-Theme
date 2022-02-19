@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #HEADER/VARIABLES
+   ========================================================================== */
+
+$header-content-padding-top: 2rem;
+
+$header-nav-button-after-offset: 1rem;
+$header-nav-button-height: 2.4rem;
+$header-nav-button-margin-right: 0.6rem;
+$header-nav-button-width: 2.4rem;
+
+:root {
+    --headerBackgroundColor: transparent;
+    --headerBackgroundPattern: none;
+    --headerLogoMaxHeight: 5rem;
+    --headerLogoMaxWidth: 10rem;
+    --headerMobileBackgroundColor: var(--colorGreyLight);
+    --headerMobileBackgroundPattern: none;
+    --headerContentHeight: 8rem;
+    --headerNavPaddingTop: var(--headerContentHeight);
+
+    @include mq($from: tablet) {
+        --headerContentHeight: 10rem;
+        --headerLogoMaxHeight: 6rem;
+        --headerLogoMaxWidth: 15rem;
+    }
+}

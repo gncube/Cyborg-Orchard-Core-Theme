@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #HEADING
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: $spacing-text-default;
+    margin-top: 0;
+
+    @include mq($from: mobileLarge) {
+        margin-bottom: $spacing-text-desktop;
+    }
+
+    > a {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    @include text-heading('H1');
+}
+
+h2 {
+    @include text-heading('H2');
+}
+
+h3 {
+    @include text-heading('H3');
+}
+
+h4 {
+    @include text-heading('H4');
+}

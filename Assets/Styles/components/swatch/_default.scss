@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #SWATCH/DEFAULT
+   ========================================================================== */
+
+.swatch {
+    padding-top: $swatch-height;
+
+    pre {
+        margin-bottom: 0;
+        padding: $spacing-default;
+
+        background-color: var(--colorGreyLight);
+
+        text-align: center;
+
+        span {
+            display: block;
+        }
+    }
+}

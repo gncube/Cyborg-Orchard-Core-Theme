@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #LIST/HORIZONTAL
+   ========================================================================== */
+
+.list--horizontal,
+.list--horizontal-spaced {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list--horizontal-spaced {
+    > li {
+        margin-right: $spacing-default;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

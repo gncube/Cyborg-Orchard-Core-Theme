@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #FOCUS
+   ========================================================================== */
+
+/**
+ * Mixin for adding :focus styling to elements.
+ */
+
+@mixin focus-form-element {
+    $box-shadow-blur: 6px;
+    $box-shadow-spread: 1px;
+
+    border: $form-border-size solid var(--colorTextDefault);
+    box-shadow: 0 0 $box-shadow-blur $box-shadow-spread var(--colorPrimary);
+}

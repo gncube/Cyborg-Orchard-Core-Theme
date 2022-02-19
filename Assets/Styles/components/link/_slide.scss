@@ -1,0 +1,60 @@
+/* ==========================================================================
+   #LINK/SLIDE
+   ========================================================================== */
+
+.link--slide {
+    &-bottom:before {
+        top: 100%;
+        transform: translateY(10px);
+    }
+
+    &-center:before {
+        top: 100%;
+        transform: translateY(0px);
+    }
+
+    &-top:before {
+        bottom: 100%;
+        transform: translateY(10px);
+    }
+
+    &-bottom,
+    &-center,
+    &-top {
+        position: relative;
+
+        text-decoration: none;
+
+        &:before {
+            content: '';
+            height: $link-line-height;
+            left: 0;
+            position: absolute;
+            width: 100%;
+
+            background-color: var(--colorPrimary);
+            opacity: 0;
+
+            transition: opacity $link-transition-duration,
+                transform $link-transition-duration;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-bottom:hover:before {
+        transform: translateY(0px);
+    }
+
+    &-center:hover:before {
+        transform: translateY(-10px);
+    }
+
+    &-top:hover:before {
+        transform: translateY(0);
+    }
+}

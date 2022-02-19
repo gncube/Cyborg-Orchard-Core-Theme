@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #GALLERY/VARIABLES
+   ========================================================================== */
+
+:root {
+    --galleryBorderRadius: 1rem;
+    --galleryGutter: 1.5rem;
+
+    @include mq($from: mobile) {
+        --galleryGutter: 2rem;
+    }
+}

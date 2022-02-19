@@ -1,0 +1,34 @@
+{
+  "BooleanField": [
+    {
+      "contentType": [
+        "Homepage",
+        "Page"
+      ],
+      "place": "-"
+    }
+  ],
+  "TitlePart": [
+    {
+      "contentType": [
+        "Homepage"
+      ],
+      "place": "-"
+    }
+  ],
+  "ResponsiveMediaField": [
+    {
+      "contentType": [
+        "SectionFeatured"
+      ],
+      "place": "Background"
+    },
+    {
+      "contentType": [
+        "CarouselItem"
+      ],
+      "displayType": "Detail",
+      "place": "Background"
+    }
+  ]
+}

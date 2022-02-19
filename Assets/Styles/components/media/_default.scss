@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #MEDIA/DEFAULT
+   ========================================================================== */
+
+.media {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    @include mq($from: tablet) {
+        display: flex;
+    }
+
+    &__body {
+        padding-top: $content-gutter-small;
+
+        @include mq($from: tablet) {
+            margin-left: $content-gutter;
+            padding-top: 0;
+        }
+    }
+}
