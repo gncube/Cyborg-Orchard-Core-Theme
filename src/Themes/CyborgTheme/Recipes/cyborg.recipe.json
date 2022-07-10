@@ -10,42 +10,21 @@
   "tags": [ "developer", "default" ],
   "steps": [
     {
-      "name": "feature",
-      "enable": [
-        // SaaS
-        "OrchardCore.Admin",
-        "OrchardCore.Diagnostics",
-        "OrchardCore.DynamicCache",
-        "OrchardCore.HomeRoute",
-        "OrchardCore.Localization",
-        "OrchardCore.Features",
-        "OrchardCore.Navigation",
-        "OrchardCore.Recipes",
-        "OrchardCore.Resources",
-        "OrchardCore.Roles",
-        "OrchardCore.Settings",
-        "OrchardCore.Tenants",
-        "OrchardCore.Themes",
-        "OrchardCore.Users",
-
-        // Themes
-        "CyborgTheme",
-        "TheAdmin",
-        "SafeMode"
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "CyborgTheme",
+          "name": "Basic-FeaturesAndSettings"
+        },
+        {
+          "executionid": "CyborgTheme",
+          "name": "Basic-ContentDefinitions"
+        },
+        {
+          "executionid": "Etch.OrchardCore.Widgets",
+          "name": "Widgets-ContentDefinitions"
+        }
       ]
-    },
-    {
-      "name": "themes",
-      "admin": "TheAdmin",
-      "site": "CyborgTheme"
-    },
-    {
-      "name": "settings",
-      "HomeRoute": {
-        "Action": "Index",
-        "Controller": "Home",
-        "Area": "CyborgTheme"
-      }
     }
   ]
 }
