@@ -2,6 +2,8 @@
 
 Cyborg, Jet black and electric blue theme based on Bootstrap. Icons from Font Awesome. Web fonts from Google. Made by Thomas Park. Code released under the MIT License. This theme was created using v1.0.0 of Etch.OrchardCore.ThemeBoilerplate template.
 
+dotnet new octheme -n CyborgTheme
+
 ## Orchard Core Reference
 
 This theme is referencing a stable build of Orchard Core ([`1.1.0`](https://www.nuget.org/packages/OrchardCore.Theme.Targets/1.1.0)).
