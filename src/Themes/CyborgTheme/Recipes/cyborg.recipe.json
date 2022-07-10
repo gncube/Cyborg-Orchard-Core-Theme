@@ -1,9 +1,9 @@
 {
-  "name": "SaaS",
-  "displayName": "Software as a Service",
+  "name": "Cyborg",
+  "displayName": "Cyborg Black Theme",
   "description": "Provides default SaaS features like managing multiple websites.",
-  "author": "The Orchard Core Team",
-  "website": "https://orchardcore.net",
+  "author": "GSN",
+  "website": "https://ncube.digital",
   "version": "1.0.0",
   "issetuprecipe": true,
   "categories": [ "default" ],
@@ -29,7 +29,7 @@
         "OrchardCore.Users",
 
         // Themes
-        "TheTheme",
+        "CyborgTheme",
         "TheAdmin",
         "SafeMode"
       ]
@@ -37,14 +37,14 @@
     {
       "name": "themes",
       "admin": "TheAdmin",
-      "site": "TheTheme"
+      "site": "CyborgTheme"
     },
     {
       "name": "settings",
       "HomeRoute": {
         "Action": "Index",
         "Controller": "Home",
-        "Area": "TheTheme"
+        "Area": "CyborgTheme"
       }
     }
   ]
