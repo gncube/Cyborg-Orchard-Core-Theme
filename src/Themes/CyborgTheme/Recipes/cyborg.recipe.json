@@ -19,10 +19,6 @@
         {
           "executionid": "CyborgTheme",
           "name": "Basic-ContentDefinitions"
-        },
-        {
-          "executionid": "Etch.OrchardCore.Widgets",
-          "name": "Widgets-ContentDefinitions"
         }
       ]
     }
